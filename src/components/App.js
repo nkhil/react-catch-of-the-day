@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
@@ -7,16 +8,19 @@ import Inventory from './Inventory';
 class App extends React.Component {
     render(){
         return(
-            <div className="catch-of-the-day">
-                <div className="menu">
-                    <Header 
-                        tagline="Tagline"  
-                        num={23}                  
-                    />
-                    <Order />
-                    <Inventory />
+            <Fragment>
+                <div className="catch-of-the-day">
+                    <div className="menu">
+                        <Header 
+                            tagline="Tagline"  
+                            num={23}                  
+                        />
+                        <Order />
+                        <Inventory word="duke" />
+                        
+                    </div>
                 </div>
-            </div>
+            </Fragment>
         )
     }
 }

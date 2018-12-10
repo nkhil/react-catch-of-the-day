@@ -1,12 +1,9 @@
 import React from 'react';
 
-const NotFound = (props) => (
-    <React.Fragment>
-
-        `<h2>404 Error!</h2>
-        <h3>Not Found!!!</h3>`
-
-    </React.Fragment>
+const NotFound = () => (
+    <div>
+        <h2>Not Found!!!NNN!!NN</h2>
+    </div>
 );
 
 export default NotFound;
