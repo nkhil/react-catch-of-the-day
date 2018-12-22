@@ -1,14 +1,18 @@
 import React, { Fragment } from 'react';
 
 class Inventory extends React.Component {
-       
-    render(){
+    handleClick = () => {
+        console.log('handleClick just got calleddd!!!')
+    }
+    someFunction = Math.floor((Math.random() * 100) + 1);
+
+    render(){    
     
-    const something = Math.floor((Math.random() * 100) + 1);
         return (
             <Fragment>
-                <h1>Your lucky number today is { something }</h1>
+                <h1>Your lucky number today is { this.someFunction }</h1>
                 <h2>..and your lucky word is { this.props.word }</h2>
+                {/* <button onClick={ this.handleClick }>Click me</button> */}
             </Fragment>
         )
     }

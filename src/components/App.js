@@ -12,7 +12,7 @@ class App extends React.Component {
                 <div className="catch-of-the-day">
                     <div className="menu">
                         <Header 
-                            tagline="Tagline"  
+                            tagline="Sweet Sweet Fish"  
                             num={23}                  
                         />
                         <Order />
