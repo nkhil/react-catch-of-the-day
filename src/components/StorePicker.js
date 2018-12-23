@@ -18,7 +18,7 @@ class StorePicker extends React.Component {
         // Go to /store/:storeID
         this.props.history.push(`/store/${storeName}`);
     }
-    
+        
     render(){
         return (
             <Fragment>

@@ -1,19 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import AddFishForm from './AddFishForm';
 
 class Inventory extends React.Component {
-    handleClick = () => {
-        console.log('handleClick just got calleddd!!!')
-    }
-    someFunction = Math.floor((Math.random() * 100) + 1);
-
+        
     render(){    
     
         return (
-            <Fragment>
-                <h1>Your lucky number today is { this.someFunction }</h1>
-                <h2>..and your lucky word is { this.props.word }</h2>
-                {/* <button onClick={ this.handleClick }>Click me</button> */}
-            </Fragment>
+            
+            <div className="inventory">
+                <h2>Inventory</h2>
+                <AddFishForm addFish={this.props.addFish}/>
+            </div>
+            
         )
     }
 }

@@ -3,9 +3,7 @@ import React from 'react';
 const Order = (props) => (
     <div className = "order">
     
-        <h2>
-            This is the order stateless func component.
-        </h2>
+        <h2>Order</h2>
     
     </div>
 );
