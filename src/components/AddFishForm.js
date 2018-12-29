@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component, Fragment} from 'react';
 
-class AddFishForm extends React.Component {
+class AddFishForm extends Component {
   nameRef = React.createRef();
   priceRef =  React.createRef();
   statusRef = React.createRef();
@@ -24,7 +24,8 @@ class AddFishForm extends React.Component {
   render(){
 
     return(
-      <form
+      <Fragment>
+        <form
         className="fish-edit"
         onSubmit={this.createFish}
       >
@@ -38,6 +39,8 @@ class AddFishForm extends React.Component {
         <input name="image" ref={this.imageRef} type="text" placeholder="Image URL" />
         <button type="submit">+ Add Fish</button>
       </form>
+      </Fragment>
+      
     );
 
   }

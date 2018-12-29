@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
+import sampleFishes from '../sample-fishes';
 
 
 class App extends React.Component {
@@ -20,6 +20,11 @@ class App extends React.Component {
         fishes[`fish${Date.now()}`] = fish;
         //3. Set that as state
         this.setState({ fishes: fishes });
+        // This can also just be `fishes`.
+    };
+    loadSampleFishes = () => {
+        // console.log('LoadSampleFishes() called...');
+        this.setState( { fishes: sampleFishes } );        
     };
 
     render(){
@@ -33,7 +38,10 @@ class App extends React.Component {
                         />                                              
                     </div>
                     <Order />
-                    <Inventory addFish={this.addFish} />
+                    <Inventory 
+                        addFish={this.addFish} 
+                        loadSampleFishes = {this.loadSampleFishes   }
+                    />
                 </div>
             </Fragment>
         );
