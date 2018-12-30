@@ -3,6 +3,7 @@ import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
 import sampleFishes from '../sample-fishes';
+import Fish from './Fish';
 
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
         this.setState({ fishes: fishes });
         // This can also just be `fishes`.
     };
+
     loadSampleFishes = () => {
         // console.log('LoadSampleFishes() called...');
         this.setState( { fishes: sampleFishes } );        
@@ -35,12 +37,15 @@ class App extends React.Component {
                         <Header 
                             tagline="Sweet Sweet Fish"  
                             num={23}                  
-                        />                                              
+                        />  
+                        <ul className="fishes">
+                            {Object.keys(this.state.fishes).map(key => <li key={key}>{key}</li>)}
+                        </ul>                                            
                     </div>
                     <Order />
                     <Inventory 
                         addFish={this.addFish} 
-                        loadSampleFishes = {this.loadSampleFishes   }
+                        loadSampleFishes = {this.loadSampleFishes}
                     />
                 </div>
             </Fragment>
