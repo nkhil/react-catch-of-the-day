@@ -39,7 +39,13 @@ class App extends React.Component {
                             num={23}                  
                         />  
                         <ul className="fishes">
-                            {Object.keys(this.state.fishes).map(key => <li key={key}>{key}</li>)}
+                        {/* <Fish /> */}
+                        {console.log(this.state.fishes)}
+                        {/* {console.log(Object.keys(this.state.fishes).map(key => 'key is ' + key))} */}
+                        
+                            {
+                                Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]} />)
+                            }
                         </ul>                                            
                     </div>
                     <Order />
