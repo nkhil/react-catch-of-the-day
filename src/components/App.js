@@ -29,6 +29,13 @@ class App extends React.Component {
         this.setState( { fishes: sampleFishes } );        
     };
 
+    addToOrder = (key) => {
+       const order = { ...this.state.order };
+       order[key] = order[key] + 1 || 1;
+       this.setState( { order: order } );
+        
+    };
+
     render(){
         return(
             <Fragment>
@@ -40,15 +47,26 @@ class App extends React.Component {
                         />  
                         <ul className="fishes">
                         {/* <Fish /> */}
-                        {console.log(this.state.fishes)}
+                        {/* {console.log(this.state.order)} */}
                         {/* {console.log(Object.keys(this.state.fishes).map(key => 'key is ' + key))} */}
                         
                             {
-                                Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]} />)
+                                Object.keys(this.state.fishes)
+                                    .map(key => (
+                                        <Fish 
+                                            key={key} 
+                                            lock={key} 
+                                            details={this.state.fishes[key]} 
+                                            addToOrder={this.addToOrder} 
+                                        />)
+                                    )
                             }
                         </ul>                                            
                     </div>
-                    <Order />
+                    <Order 
+                        fishes={this.state.fishes}
+                        order={this.state.order}
+                    />
                     <Inventory 
                         addFish={this.addFish} 
                         loadSampleFishes = {this.loadSampleFishes}

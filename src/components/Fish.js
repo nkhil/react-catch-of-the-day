@@ -2,9 +2,14 @@ import React, { Component, Fragment } from 'react';
 import { formatPrice } from '../helpers';
 
 class Fish extends Component {
-
+  handleClick = () => {
+    this.props.addToOrder(this.props.lock);
+    console.log('button clicked')
+  }
+  
   render(){
   const { name, image, desc, price, status } = this.props.details;
+  const isAvailable = status === "available"
     return(
       <Fragment>
         {/* <li className="fish">{this.props.key}</li> */}
@@ -17,8 +22,11 @@ class Fish extends Component {
             </span>
           </h3>
           <p>{desc}</p>
-          <button>Add to cart</button>
+          <button disabled={!isAvailable} onClick={this.handleClick}>
+            { isAvailable ? 'Add to Order' : 'Sold Out!' }
+          </button>
         </li>
+        
       </Fragment> 
     );
   }
