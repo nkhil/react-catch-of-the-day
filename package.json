@@ -6,6 +6,7 @@
     "concurrently": "3.5.1",
     "react-scripts": "^1.1.4"
   },
+  "homepage": "http://nikhilvijayan.com/catchoftheday",
   "dependencies": {
     "@firebase/auth": "^0.9.1",
     "@firebase/auth-types": "^0.5.0",
